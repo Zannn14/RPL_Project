@@ -86,12 +86,12 @@ public class RPL_Kelompok1B{
 
 			System.out.print("Masukkan Jumlah Uang: ");
 			uang = in.nextInt();
-			if (uang <= temp)
+			if (uang < temp)
 				System.out.println("Maaf uang anda tidak cukup.");
 			else 
 				System.out.println("Kembalian: "+(uang-temp));
 		
-		}while(uang <= temp);
+		}while(uang < temp);
 
 		System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 		System.out.println("|= Terima kasih "+nama);
