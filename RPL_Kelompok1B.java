@@ -15,10 +15,12 @@ public class RPL_Kelompok1B{
 		int[] stock = {20, 20, 20, 20, 20, 20, 20, 20, 20, 20};
 
 		//Variabel yang digunakan untuk menginput
+		String awal = "";
+		String awal1 = "";
 		int pilih = 0;
 		int pilih1 = 0;
 		String yn = "";
-		
+		String uang1 = "";
 		//Variabel yang digunakan untuk menampung data
 		int temp = 0;
 		int uang = 0;
@@ -40,16 +42,26 @@ public class RPL_Kelompok1B{
 
 			do{
 			System.out.print("Silahkan pilih mainan yang akan anda beli:");
-			pilih = an.nextInt();		
-				
+				do{
+					awal = an.next();
+					if (!awal.matches("[0-9]+")) {
+					System.out.print("Inputan harus berupa angka, Silahkan input ulang: ");
+					}
+				}while(!awal.matches("[0-9]+"));	
+				pilih = Integer.parseInt(awal);
 				if (pilih < 1 || pilih > 10)
 					System.out.println("Tidak ada di menu");
 			
 			}while(pilih < 1 || pilih > 10);
 
 			System.out.print("Berapa item yang akan anda beli:");
-			pilih1 = an.nextInt();
-
+			do{
+			awal1 = an.next();
+				if (!awal1.matches("[0-9]+")) {
+					System.out.print("Inputan harus berupa angka, Silahkan input ulang: ");
+				}
+			}while(!awal1.matches("[0-9]+"));	
+			pilih1 = Integer.parseInt(awal1);
 				for (;i < arr.length ;i++ ) {
 					
 					if (pilih == arr[pilih-1] ) {
@@ -85,7 +97,13 @@ public class RPL_Kelompok1B{
 		do{
 
 			System.out.print("Masukkan Jumlah Uang: ");
-			uang = in.nextInt();
+			do{
+			uang1 = in.next();
+				if (!uang1.matches("[0-9]+")) {
+					System.out.print("Inputan harus berupa angka, Silahkan input ulang: ");
+				}
+			}while(!uang1.matches("[0-9]+"));
+			uang = Integer.parseInt(uang1);
 			if (uang < temp)
 				System.out.println("Maaf uang anda tidak cukup.");
 			else 
