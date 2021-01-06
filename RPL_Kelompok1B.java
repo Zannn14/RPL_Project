@@ -32,7 +32,12 @@ public class RPL_Kelompok1B{
 		int i = 0;
 
 		System.out.print("Silahkan Masukkan Nama Anda: ");
-		String nama = in.nextLine();
+		do{
+			nama = in.next();
+			if (!nama.matches("[a-zA-Z]+") ) {
+				System.out.print("Inputan harus berupa huruf, Silahkan input ulang: ");
+			}
+		}while(!nama.matches("[a-zA-Z]+")  );
 		System.out.println("List mainan yang dijual:\n");
 		
 		do{
